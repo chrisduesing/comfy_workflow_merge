@@ -32,7 +32,8 @@ def merge_json(json1, json2, y_offset):
         merged["nodes"].append(node)
     for node in json2["nodes"]:
         node["id"] += node_id_offset
-        node["pos"]["1"] += y_offset  # Offset the y position
+        print(node["pos"])
+        node["pos"][1] += y_offset  # Offset the y position
         if "inputs" in node:
             for input_item in node["inputs"]:
                 if "link" in input_item and input_item["link"] is not None:
